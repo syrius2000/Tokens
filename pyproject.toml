@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "tokencalc"
+version = "0.1.0"
+description = "Anthropic および OpenAI モデル向けトークン数計算ツール"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "tokencalc", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+anthropic = ">=0.40.0"
+tiktoken = ">=0.8.0"
+click = ">=8.1.0"
+
+[tool.poetry.scripts]
+TokenCalc = "tokencalc.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

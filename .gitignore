@@ -1,0 +1,67 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# === 仮想環境 ===
+.venv/
+venv/
+ENV/
+env/
+
+# === Poetry ===
+# poetry.lock はチームで共有する場合はコミット推奨
+# poetry.lock
+
+# === IDE / エディタ ===
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# === テスト / カバレッジ ===
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# === 型チェック / リント ===
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === 環境変数 / シークレット ===
+.env
+.env.local
+*.pem
+secrets/
+
+# === ログ ===
+*.log
+logs/
+
+# === OS ===
+Thumbs.db
