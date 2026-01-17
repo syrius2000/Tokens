@@ -1,16 +1,30 @@
-# トークン数計算ツール (tokencalc) 実装計画
+# コアコード最新モデル対応 実装計画
 
-指定されたディレクトリ内のファイルを走査し、AnthropicおよびOpenAIのモデルにおけるトークン数を計算するCLIツールを実装します。
+`TokenCalc` を最新のAIモデル市場（2026年）に適合させ、コスト計算スキルと完全に整合させます。
 
-## 提案される変更点
+## 各ファイルへの変更点
 
-### プロジェクト構成
-標準的なPython `src` レイアウトを採用します。
+### [Component] src/tokencalc/
 
-#### [NEW] [pyproject.toml](file:///Volumes/Download/Development/Tokens/pyproject.toml)
-#### [NEW] [src/tokencalc/counter.py](file:///Volumes/Download/Development/Tokens/src/tokencalc/counter.py)
-#### [NEW] [src/tokencalc/main.py](file:///Volumes/Download/Development/Tokens/src/tokencalc/main.py)
+#### [MODIFY] [counter.py](file:///Volumes/Download/Development/Tokens/src/tokencalc/counter.py)
+- `google-generativeai` SDKのインポートと初期化。
+- `count_google_tokens` メソッドの追加。
+- Claude 4.5 や GPT-4.5 を意識したデフォルト設定の更新。
+
+#### [MODIFY] [main.py](file:///Volumes/Download/Development/Tokens/src/tokencalc/main.py)
+- Google (Gemini) トークンの集計ロジックを追加。
+- 最終出力に `Total Google Tokens` を追加し、`cost_calc.py` がこれをパースできるようにする。
+- デフォルトモデルを `gpt-4.5` や `gemini-3-pro` などの最新世代に合わせて調整。
+
+#### [MODIFY] [__init__.py](file:///Volumes/Download/Development/Tokens/src/tokencalc/__init__.py)
+- バージョンを `0.2.0` にバンプ。
+
+### [Component] プロジェクト設定
+
+#### [MODIFY] [pyproject.toml](file:///Volumes/Download/Development/Tokens/pyproject.toml)
+- `google-generativeai` を依存関係に追加。
 
 ## 検証プラン
-- `pytest` による自動テスト
-- 手動検証
+1. `poetry install` で新しい依存関係を導入。
+2. `TokenCalc` を実行し、Anthropic, OpenAI, Google の3カテゴリの結果が表示されることを確認。
+3. `cost_calc.py` にパイプで渡し、Gemini等のコストが正しく計算されることを確認。

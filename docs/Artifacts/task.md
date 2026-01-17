@@ -1,15 +1,13 @@
-# タスクリスト: トークン数計算ツールの実装
+# タスク：有効なSkillサンプルの提示
 
-- [x] プロジェクト環境のセットアップ
-  - [x] `pyproject.toml` の作成
-  - [x] 仮想環境の構築と依存関係のインストール (`anthropic`, `tiktoken`, `click`)
-- [x] トークン計算ロジックの実装
-  - [x] `src/tokencalc/counter.py` の作成
-  - [x] Anthropic用計算関数の実装
-  - [x] OpenAI (tiktoken) 用計算関数の実装
-- [x] CLIインターフェースの実装
-  - [x] `src/tokencalc/main.py` の作成
-  - [x] ディレクトリ走査ロジックの追加
-- [x] 動作確認と検証
-  - [x] テスト用データの作成
-  - [x] 実行確認
+- [x] Skillサンプルの調査とアイデア出し
+- [x] このプロジェクトに最適なSkillサンプルの構成案作成
+- [x] ユーザーへの提案と説明
+- [x] スキルの実装 (SKILL.md, scripts, examples)
+- [x] 動作検証 (TokenCalcとの連携)
+- [x] 最新モデル価格の調査と更新 (Gemini 3, Claude 4.5等)
+- [x] コアコードの最新モデル対応 (src/tokencalc/)
+  - [x] `counter.py` への Google (Gemini) サポート追加
+  - [x] `main.py` の出力形式の更新 (Googleトークン追加)
+  - [x] `pyproject.toml` の依存関係更新
+  - [x] `cost_calc.py` との最終的な整合性確認
