@@ -12,6 +12,9 @@ anthropic = ">=0.40.0"
 tiktoken = ">=0.8.0"
 click = ">=8.1.0"
 google-genai = "^1.59.0"
+pytest = "^8.0.0"
+pytest-asyncio = "^0.23.0"
+
 
 [tool.poetry.scripts]
 TokenCalc = "tokencalc.main:main"
