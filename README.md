@@ -22,7 +22,7 @@ Anthropic (Claude)、OpenAI (GPT)、および **Google (Gemini)** のモデル�
 
 ```bash
 # 依存関係のインストールと仮想環境の構築
-poetry install
+uv sync
 ```
 
 ## 使用方法
@@ -32,7 +32,7 @@ poetry install
 
 ```bash
 # カレントディレクトリを対象にする場合
-poetry run TokenCalc .
+uv run TokenCalc .
 ```
 
 ### 出力例
@@ -55,10 +55,10 @@ Total Google Tokens:    1966
 
 ```bash
 # OpenAI モデルを指定
-poetry run TokenCalc . --model gpt-3.5-turbo
+uv run TokenCalc . --model gpt-3.5-turbo
 
 # Google モデルも指定
-poetry run TokenCalc . --model gpt-4o --google-model gemini-1.5-pro
+uv run TokenCalc . --model gpt-4o --google-model gemini-1.5-pro
 ```
 
 ## プロジェクト構造

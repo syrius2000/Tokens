@@ -1,24 +1,29 @@
-[tool.poetry]
+[project]
 name = "tokencalc"
 version = "0.2.0"
 description = "Anthropic, OpenAI, および Google モデル向けトークン数計算ツール"
-authors = ["Your Name <you@example.com>"]
+authors = [{ name = "Your Name", email = "you@example.com" }]
 readme = "README.md"
-packages = [{ include = "tokencalc", from = "src" }]
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40.0",
+    "tiktoken>=0.8.0",
+    "click>=8.1.0",
+    "google-genai>=1.59.0",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.10"
-anthropic = ">=0.40.0"
-tiktoken = ">=0.8.0"
-click = ">=8.1.0"
-google-genai = "^1.59.0"
-
-[tool.poetry.scripts]
+[project.scripts]
 TokenCalc = "tokencalc.main:main"
 
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.ruff]
 line-length = 120
